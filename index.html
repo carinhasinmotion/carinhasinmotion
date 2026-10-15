@@ -1754,32 +1754,39 @@ function setLanguage(lang) {
     document.getElementById('showreelLabel').textContent = currentLanguage === 'pt' ? 'Reproduzir Showreel' : 'Play Showreel';
   });
 
-  // Portfolio item click navigation
+  // Portfolio navigation — English project titles are permanent.
   const projectMap = {
-  "Celebrações do Campeonato": "championship-celebrations.html",
-  "20 Anos de RIR Lisboa": "20-years-of-rir-lisboa.html",
-  "Lisboa Sob as Estrelas": "lisbon-under-stars.html",
-  "100.º Aniversário da Disney": "disneys-100th-aniversary.html",
-  "Cerimónia de Abertura do Estádio Al-Janoub": "opening-ceremony-al-janoub.html",
-  "15.º Aniversário do RIR Lisboa": "rir-lisboa-15th-anniversary.html",
+  "Championship Celebrations": "championship-celebrations.html",
+  "20 Years of RIR Lisboa": "20-years-of-rir-lisboa.html",
+  "Lisbon Under Stars": "lisbon-under-stars.html",
+  "Disney's 100th Anniversary": "disneys-100th-aniversary.html",
+  "Opening Ceremony Of Al-Janoub Stadium": "opening-ceremony-al-janoub.html",
+  "RIR Lisboa's 15th Anniversary": "rir-lisboa-15th-anniversary.html",
   "Le Grand Alegro": "le-grand-alegro.html",
-  "Cerimónia de Abertura e Encerramento do SAGP": "sagp-opening-closing-ceremony.html",
-  "Uma Breve História da Luz": "a-brief-history-of-light.html",
-  "Apresentação de Equipamentos Época 24/25": "kits-presentation-season-24-25.html",
-  "A Viagem do Inverno e do Verão": "the-journey-of-winter-and-summer.html",
+  "SAGP Opening and Closing Ceremony": "sagp-opening-closing-ceremony.html",
+  "A Brief History of Light": "a-brief-history-of-light.html",
+  "Kits Presentation Season 24/25": "kits-presentation-season-24-25.html",
+  "The Journey of Winter and Summer": "the-journey-of-winter-and-summer.html",
   "EDP 50 Anos": "edp-50-anos.html",
   "Galardões Cosme Damião 2018": "galardoes-cosme-damiao-2018.html",
-  "Portals: A Máquina dos Mundos": "portals-the-machine.html",
-  "A Arte da Luz": "the-art-of-light.html",
-  };
-
+  "Portals: The Machine of Worlds": "portals-the-machine.html",
+  "The Art of Light": "the-art-of-light.html"
+};
   document.querySelectorAll('.portfolio-item').forEach(item => {
     const title = item.querySelector('h3');
     if (!title) return;
     const url = projectMap[title.textContent.trim()];
     if (url) {
-      item.style.cursor = 'none';
-      item.addEventListener('click', () => window.location.href = url);
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', () => { window.location.href = url; });
+      item.setAttribute('role', 'link');
+      item.setAttribute('tabindex', '0');
+      item.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          window.location.href = url;
+        }
+      });
     }
   });
 
