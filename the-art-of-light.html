@@ -582,6 +582,8 @@ nav.top-nav::before {
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
+
+.lang-switch{display:flex;align-items:center;gap:7px;position:relative;z-index:4;font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase}.lang-btn{appearance:none;border:0;background:none;color:rgba(255,255,255,.35);font:inherit;letter-spacing:inherit;cursor:pointer;padding:4px 2px;transition:color .25s ease}.lang-btn:hover,.lang-btn.active{color:var(--white)}.lang-btn.active{border-bottom:1px solid var(--accent)}.lang-sep{color:rgba(255,255,255,.18)}.mobile-lang-switch{display:none;margin-top:25px;justify-content:center}@media(max-width:768px){nav.top-nav>.lang-switch{display:none}.mobile-menu .mobile-lang-switch{display:flex}}
 </style>
 </head>
 <body>
@@ -603,6 +605,7 @@ nav.top-nav::before {
     <li><span class="sep">/</span></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
+<div class="lang-switch" role="group" aria-label="Idioma / Language"><button type="button" class="lang-btn" data-lang="pt" onclick="setLanguage('pt')">PT</button><span class="lang-sep">/</span><button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button></div>
 </nav>
 
 <!-- ⚠️ Hamburger FORA do nav — assim fica sempre visível em mobile -->
@@ -618,7 +621,8 @@ nav.top-nav::before {
   <a href="index.html#about">About</a>
   <a href="index.html#portfolio" class="active">Portfolio</a>
   <a href="index.html#contact">Contact</a>
-  <span class="mobile-menu-footer">Bruno Carinhas © 2025</span>
+  <div class="lang-switch mobile-lang-switch" role="group" aria-label="Idioma / Language"><button type="button" class="lang-btn" data-lang="pt" onclick="setLanguage('pt')">PT</button><span class="lang-sep">/</span><button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button></div>
+<span class="mobile-menu-footer">Bruno Carinhas © 2025</span>
 </div>
 
 <!-- PROJECT HEADER -->
@@ -1057,6 +1061,14 @@ nav.top-nav::before {
       document.body.style.overflow = '';
     });
   });
+</script>
+
+<script>
+const projectTranslations={"desc":"Um espetáculo de video mapping criado para celebrar o 5.º aniversário do campus da Nova SBE em Carcavelos, revisitando o percurso da instituição e refletindo a sua aposta na educação, comunidade, inovação e futuro.","overview":"Como Team Lead e Motion Designer, liderei a equipa multimédia ao longo da produção e participei diretamente na criação dos conteúdos visuais. As minhas responsabilidades incluíram a gestão das composições principais, dos renders e dos ficheiros finais, bem como o desenvolvimento de layouts e a animação de várias sequências. Os conteúdos foram concebidos a partir da arquitetura do campus, aliando a narrativa do aniversário a um espetáculo de video mapping em grande escala.","bullets":["Liderança da equipa multimédia durante a produção dos conteúdos","Gestão das composições principais, dos renders e das entregas finais","Desenvolvimento de layouts e animação de sequências para o espetáculo","Video mapping arquitetónico para o 5.º aniversário do campus"],"common":{"Home":"Início","About":"Sobre","Portfolio":"Portefólio","Contact":"Contacto","Back to Portfolio":"Voltar ao Portefólio","Client":"Cliente","Role":"Função","Year":"Ano","Project Overview":"Sobre o Projeto","Key Highlights":"Principais Destaques","Project Images":"Imagens do Projeto","Interested in working together?":"Interessado em trabalhar comigo?","Let's discuss your next creative project and explore how I can help bring your vision to life.":"Vamos falar sobre o teu próximo projeto criativo e explorar como posso ajudar a concretizar a tua visão.","Get In Touch":"Entrar em Contacto","Previous":"Anterior","Next":"Seguinte","All rights reserved.":"Todos os direitos reservados.","Art Director":"Diretor Artístico","Team Lead & Motion Designer":"Líder de Equipa e Motion Designer","Team Lead":"Líder de Equipa","20 Years of RIR Lisboa":"20 Anos de RIR Lisboa","Lisbon Under Stars":"Lisboa Sob as Estrelas","Disney's 100th Aniversary":"100.º Aniversário da Disney","Opening Ceremony Of Al-Janoub Stadium":"Cerimónia de Abertura do Estádio Al-Janoub","RIR Lisboa's 15th Anniversary":"15.º Aniversário do RIR Lisboa","SAGP Opening and Closing Ceremony":"Cerimónia de Abertura e Encerramento do SAGP","A Brief History of Light":"Uma Breve História da Luz","Kits Presentation Season 24/25":"Apresentação dos Equipamentos 2024/25","The Journey of Winter and Summer":"A Viagem do Inverno e do Verão","Portals: The Machine of Worlds":"Portals: A Máquina dos Mundos","The Art of Light":"A Arte da Luz","Championship Celebrations":"Celebrações do Campeonato"}};
+let currentLanguage='en';const bilingualNodes=[];
+function initProjectLanguage(){const capture=(node,pt)=>{if(node)bilingualNodes.push({node,en:node.textContent,pt});};capture(document.querySelector('.project-desc'),projectTranslations.desc);capture(document.querySelector('.project-body p'),projectTranslations.overview);document.querySelectorAll('.highlights-list li').forEach((node,i)=>capture(node,projectTranslations.bullets[i]||node.textContent));const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const others=[];while(walker.nextNode())others.push(walker.currentNode);others.forEach(node=>{if(bilingualNodes.some(x=>x.node.contains(node)))return;const t=node.nodeValue.trim(),pt=projectTranslations.common[t];if(pt!==undefined)bilingualNodes.push({node,en:node.nodeValue,pt:node.nodeValue.replace(t,pt)});});setLanguage('pt');}
+function setLanguage(lang){if(lang!=='pt'&&lang!=='en')return;currentLanguage=lang;bilingualNodes.forEach(x=>{if(x.node.nodeType===Node.TEXT_NODE)x.node.nodeValue=lang==='pt'?x.pt:x.en;else x.node.textContent=lang==='pt'?x.pt:x.en;});document.documentElement.lang=lang==='pt'?'pt-PT':'en';document.querySelectorAll('.lang-btn').forEach(b=>{b.classList.toggle('active',b.dataset.lang===lang);b.setAttribute('aria-pressed',String(b.dataset.lang===lang));});}
+initProjectLanguage();
 </script>
 </body>
 </html>
