@@ -1686,6 +1686,10 @@ function translateTextNodes(root, map) {
   });
 }
 
+// Stable language switching for the About Me biography, independent of whitespace or cached text nodes.
+const aboutBio = document.querySelector('#about .about-left > p:not(.skills-label)');
+const aboutBioPT = "Sou um criativo multidisciplinar com experiência em motion design, animação, 3D, composição e direção artística. Trabalho na área desde 2017, tendo participado numa grande variedade de projetos, tanto integrado em equipas criativas como através de trabalhos freelance. A minha experiência permitiu-me trabalhar em diferentes fases do processo criativo, desde o desenvolvimento de conceitos e layouts até à animação, composição e entrega final. Nos últimos anos, assumi também funções de Team Leadership e Direção Artística, trabalhando de perto com equipas e ajudando a definir a direção visual de diferentes projetos. Trabalho principalmente em conteúdos audiovisuais, video mapping e experiências de grande escala, mas gosto de explorar diferentes áreas e de me adaptar às necessidades de cada projeto. Procuro manter um equilíbrio entre o pensamento criativo e a execução, porque gosto tanto de desenvolver uma ideia como de encontrar a melhor forma de lhe dar vida.";
+const aboutBioEN = "I'm a multidisciplinary creative with experience in motion design, animation, 3D, compositing and art direction. I've been working in the industry since 2017, taking part in a wide range of projects, both as part of creative teams and through freelance work. My experience has allowed me to work across different stages of the creative process, from developing concepts and layouts to animation, compositing and final delivery. In recent years, I've also taken on roles in Team Leadership and Art Direction, working closely with teams and helping define the visual direction of different projects. I mainly work on audiovisual content, video mapping and large-scale experiences, but I enjoy exploring different areas and adapting to the needs of each project. I try to keep a balance between creative thinking and execution, because I enjoy developing an idea just as much as figuring out the best way to bring it to life.";
 function setLanguage(lang) {
   if (lang === currentLanguage) {
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
@@ -1701,6 +1705,7 @@ function setLanguage(lang) {
     document.title = 'Bruno Carinhas - Creative Digital Content';
     document.documentElement.lang = 'pt-PT';
   }
+  if (aboutBio) aboutBio.textContent = lang === 'en' ? aboutBioEN : aboutBioPT;
   currentLanguage = lang;
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
 }
