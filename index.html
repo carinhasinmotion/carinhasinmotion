@@ -1248,6 +1248,12 @@
   .hero-lang-switch{top:26px;right:78px}
 }
 
+
+/* Center desktop nav links independently of the logo and language button */
+@media (min-width:769px) {
+  nav .nav-right { position: static; }
+  nav .nav-right > .nav-links { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); white-space: nowrap; }
+}
 </style>
 </head>
 <body>
