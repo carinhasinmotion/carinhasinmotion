@@ -1260,6 +1260,23 @@ html{overflow-x:clip}body{max-width:100%;overflow-x:clip}img,video,iframe{max-wi
 @media(max-width:768px){.hero-nav{flex-wrap:wrap;justify-content:center;padding:0 12px;row-gap:10px}.hero-nav a{padding:6px 10px;letter-spacing:.09em}.hero-bottom{padding:0 22px;bottom:24px;gap:12px}.hero-avail{max-width:45%;text-align:right}.mobile-menu{overflow-y:auto;overscroll-behavior:contain;padding:80px 16px 24px}.mobile-menu a{font-size:clamp(28px,8vw,52px)}.about-grid,.contact-grid,.portfolio-grid{min-width:0}}
 @media(max-width:480px){.hero-nav a{font-size:10px;padding:6px 7px}.hero-bottom{flex-wrap:wrap;justify-content:center;text-align:center}.hero-scroll{display:none}.hero-avail{max-width:none}}
 @media(hover:none),(pointer:coarse){.cursor,.cursor-ring{display:none!important}a,button,.portfolio-item{cursor:pointer!important}}
+
+/* Mobile hero navigation: the hamburger is the only navigation menu. */
+@media(max-width:768px){
+  #hero .hero-nav{display:none!important}
+  .stats-ribbon{padding:40px 12px 56px}
+  .stats-inner{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:0}
+  .stats-inner .stat-item{min-width:0;padding:0 7px}
+  .stats-inner .stat-number{font-size:clamp(30px,7vw,54px);white-space:nowrap;letter-spacing:0}
+  .stats-inner .stat-label{font-size:clamp(7px,1.55vw,10px);letter-spacing:.04em;line-height:1.4;overflow-wrap:normal}
+  .stats-inner .stat-item:not(:last-child)::after{right:0}
+}
+@media(max-width:400px){
+  .stats-ribbon{padding-left:6px;padding-right:6px}
+  .stats-inner .stat-item{padding:0 4px}
+  .stats-inner .stat-number{font-size:clamp(27px,8vw,36px)}
+  .stats-inner .stat-label{font-size:8px;letter-spacing:0}
+}
 </style>
 </head>
 <body>
