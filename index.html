@@ -1254,6 +1254,12 @@
   nav .nav-right { position: static; }
   nav .nav-right > .nav-links { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); white-space: nowrap; }
 }
+
+/* Responsive hardening — home */
+html{overflow-x:clip}body{max-width:100%;overflow-x:clip}img,video,iframe{max-width:100%}
+@media(max-width:768px){.hero-nav{flex-wrap:wrap;justify-content:center;padding:0 12px;row-gap:10px}.hero-nav a{padding:6px 10px;letter-spacing:.09em}.hero-bottom{padding:0 22px;bottom:24px;gap:12px}.hero-avail{max-width:45%;text-align:right}.mobile-menu{overflow-y:auto;overscroll-behavior:contain;padding:80px 16px 24px}.mobile-menu a{font-size:clamp(28px,8vw,52px)}.about-grid,.contact-grid,.portfolio-grid{min-width:0}}
+@media(max-width:480px){.hero-nav a{font-size:10px;padding:6px 7px}.hero-bottom{flex-wrap:wrap;justify-content:center;text-align:center}.hero-scroll{display:none}.hero-avail{max-width:none}}
+@media(hover:none),(pointer:coarse){.cursor,.cursor-ring{display:none!important}a,button,.portfolio-item{cursor:pointer!important}}
 </style>
 </head>
 <body>
