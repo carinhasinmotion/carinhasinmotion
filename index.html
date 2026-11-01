@@ -1296,6 +1296,19 @@ html{overflow-x:clip}body{max-width:100%;overflow-x:clip}img,video,iframe{max-wi
 @media(max-width:768px){#about,#portfolio,#contact{padding-left:24px;padding-right:24px}.contact-grid{grid-template-columns:1fr;gap:12px}.contact-card{margin:0}.about-grid,.skills-grid,.stats-inner{max-width:100%}.hero-content{max-width:100%;padding:0 14px}}
 @media(max-width:480px){#about,#portfolio,#contact{padding-left:18px;padding-right:18px}.stats-inner .stat-label{overflow-wrap:anywhere}.contact-card{padding:24px 16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Official visual identities, accessible logo fallbacks and social platform marks */
+.clients-track{gap:30px 45px}
+.client-brand{width:150px;min-height:76px;display:flex;align-items:center;justify-content:center;white-space:normal}
+.client-brand img{display:block;max-width:130px;max-height:64px;width:auto;height:auto;object-fit:contain;filter:grayscale(1) brightness(1.35);opacity:.7;transition:filter .25s ease,opacity .25s ease}
+.client-brand:hover img{filter:none;opacity:1}
+.client-logo-fallback{text-align:center;font:700 16px var(--font-mono);letter-spacing:.04em;color:var(--grey)}
+.social-presence{margin-top:30px}
+.social-icon-only{cursor:default}
+.social-icon-only img{width:19px;height:19px;display:block;filter:invert(1);opacity:.65;transition:opacity .25s ease}
+.social-icon-only:hover img{opacity:1}
+@media(max-width:768px){#clients{padding:52px 20px 62px}.clients-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 12px}.client-brand{width:100%;min-width:0;min-height:66px}.client-brand img{max-width:90%;max-height:52px}.social-links{gap:12px}}
+@media(max-width:380px){.clients-track{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -1617,16 +1630,16 @@ Trabalho principalmente em conteúdos audiovisuais, video mapping e experiência
 </section>
 
 <!-- CLIENTS -->
-<section id="clients">
+<section id="clients" aria-label="Clientes e marcas com quem trabalhei">
   <div class="clients-track reveal">
-    <div class="client-logo script">Disney+</div>
-    <div class="client-logo">SL Benfica</div>
-    <div class="client-logo serif">UNESCO</div>
-    <div class="client-logo">Benfica</div>
-    <div class="client-logo">FC Porto</div>
-    <div class="client-logo">FIFA</div>
-    <div class="client-logo" style="font-style:italic; letter-spacing:0.02em;">Formula 1</div>
-    <div class="client-logo script">Rock in Rio</div>
+    <div class="client-logo client-brand" title="Disney+"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Disney%2B_logo.svg" alt="Disney+" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">Disney+</span></div>
+    <div class="client-logo client-brand" title="SL Benfica"><img src="https://www.clipartmax.com/png/middle/108-1081517_sl-benfica-logo-s-l-benfica.png" alt="SL Benfica" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">SL Benfica</span></div>
+    <div class="client-logo client-brand" title="UNESCO"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_UNESCO_2021.svg" alt="UNESCO" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">UNESCO</span></div>
+    <div class="client-logo client-brand" title="Sporting CP"><img src="https://www.google.com/s2/favicons?domain=sporting.pt&sz=128" alt="Sporting CP" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">Sporting CP</span></div>
+    <div class="client-logo client-brand" title="FC Porto"><img src="https://p7.hiclipart.com/preview/877/309/100/fc-porto-dream-league-soccer-f-c-porto-b-uefa-champions-league-dragao-caixa-football.jpg" alt="FC Porto" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">FC Porto</span></div>
+    <div class="client-logo client-brand" title="FIFA"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/FIFA_logo_without_slogan.svg" alt="FIFA" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">FIFA</span></div>
+    <div class="client-logo client-brand" title="Formula 1"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Formula_One_logo.svg" alt="Formula 1" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">Formula 1</span></div>
+    <div class="client-logo client-brand" title="Rock in Rio"><img src="https://www.google.com/s2/favicons?domain=rockinrio.com&sz=128" alt="Rock in Rio" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">Rock in Rio</span></div>
   </div>
 </section>
 
@@ -1649,6 +1662,16 @@ Trabalho principalmente em conteúdos audiovisuais, video mapping e experiência
     </div>
 
 
+  <div class="reveal reveal-delay-2 social-presence">
+    <p class="social-label">Segue o Meu Trabalho</p>
+    <div class="social-links" aria-label="Redes sociais (perfis por configurar)">
+      <span class="social-link social-icon-only" title="LinkedIn — link por configurar" aria-label="LinkedIn — link por configurar"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/linkedin.svg" alt="LinkedIn" loading="lazy"></span>
+      <span class="social-link social-icon-only" title="Instagram — link por configurar" aria-label="Instagram — link por configurar"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/instagram.svg" alt="Instagram" loading="lazy"></span>
+      <span class="social-link social-icon-only" title="Behance — link por configurar" aria-label="Behance — link por configurar"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/behance.svg" alt="Behance" loading="lazy"></span>
+      <span class="social-link social-icon-only" title="Vimeo — link por configurar" aria-label="Vimeo — link por configurar"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/vimeo.svg" alt="Vimeo" loading="lazy"></span>
+      <span class="social-link social-icon-only" title="YouTube — link por configurar" aria-label="YouTube — link por configurar"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/youtube.svg" alt="YouTube" loading="lazy"></span>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
