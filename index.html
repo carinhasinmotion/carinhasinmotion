@@ -1309,6 +1309,11 @@ html{overflow-x:clip}body{max-width:100%;overflow-x:clip}img,video,iframe{max-wi
 .social-icon-only:hover img{opacity:1}
 @media(max-width:768px){#clients{padding:52px 20px 62px}.clients-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 12px}.client-brand{width:100%;min-width:0;min-height:66px}.client-brand img{max-width:90%;max-height:52px}.social-links{gap:12px}}
 @media(max-width:380px){.clients-track{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Local white PNG client logos; no reliance on external logo hosts. */
+#clients .client-brand img{filter:none!important;opacity:.85;max-width:140px;max-height:66px;object-fit:contain}
+#clients .client-brand:hover img{filter:none!important;opacity:1}
+@media(max-width:768px){#clients .client-brand img{max-width:90%;max-height:54px}}
 </style>
 </head>
 <body>
@@ -1632,14 +1637,14 @@ Trabalho principalmente em conteúdos audiovisuais, video mapping e experiência
 <!-- CLIENTS -->
 <section id="clients" aria-label="Clientes e marcas com quem trabalhei">
   <div class="clients-track reveal">
-    <div class="client-logo client-brand" title="Disney+"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Disney%2B_logo.svg" alt="Disney+" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">Disney+</span></div>
-    <div class="client-logo client-brand" title="SL Benfica"><img src="https://www.clipartmax.com/png/middle/108-1081517_sl-benfica-logo-s-l-benfica.png" alt="SL Benfica" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">SL Benfica</span></div>
-    <div class="client-logo client-brand" title="UNESCO"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_UNESCO_2021.svg" alt="UNESCO" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">UNESCO</span></div>
-    <div class="client-logo client-brand" title="Sporting CP"><img src="https://www.google.com/s2/favicons?domain=sporting.pt&sz=128" alt="Sporting CP" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">Sporting CP</span></div>
-    <div class="client-logo client-brand" title="FC Porto"><img src="https://p7.hiclipart.com/preview/877/309/100/fc-porto-dream-league-soccer-f-c-porto-b-uefa-champions-league-dragao-caixa-football.jpg" alt="FC Porto" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">FC Porto</span></div>
-    <div class="client-logo client-brand" title="FIFA"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/FIFA_logo_without_slogan.svg" alt="FIFA" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">FIFA</span></div>
-    <div class="client-logo client-brand" title="Formula 1"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Formula_One_logo.svg" alt="Formula 1" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">Formula 1</span></div>
-    <div class="client-logo client-brand" title="Rock in Rio"><img src="https://www.google.com/s2/favicons?domain=rockinrio.com&sz=128" alt="Rock in Rio" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">Rock in Rio</span></div>
+    <div class="client-logo client-brand" title="Disney+"><img src="Index/clients/disney-plus-white.png" alt="Disney+" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">Disney+</span></div>
+    <div class="client-logo client-brand" title="SL Benfica"><img src="Index/clients/sl-benfica-white.png" alt="SL Benfica" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">SL Benfica</span></div>
+    <div class="client-logo client-brand" title="UNESCO"><img src="Index/clients/unesco-white.png" alt="UNESCO" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">UNESCO</span></div>
+    <div class="client-logo client-brand" title="Sporting CP"><img src="Index/clients/sporting-cp-white.png" alt="Sporting CP" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">Sporting CP</span></div>
+    <div class="client-logo client-brand" title="FC Porto"><img src="Index/clients/fc-porto-white.png" alt="FC Porto" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">FC Porto</span></div>
+    <div class="client-logo client-brand" title="FIFA"><img src="Index/clients/fifa-white.png" alt="FIFA" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">FIFA</span></div>
+    <div class="client-logo client-brand" title="Formula 1"><img src="Index/clients/formula-1-white.png" alt="Formula 1" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">Formula 1</span></div>
+    <div class="client-logo client-brand" title="Rock in Rio"><img src="Index/clients/rock-in-rio-white.png" alt="Rock in Rio" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="client-logo-fallback" style="display:none">Rock in Rio</span></div>
   </div>
 </section>
 
