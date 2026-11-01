@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bruno Carinhas - Conteúdo Digital Criativo</title>
+<meta name="description" content="Portefólio de Bruno Carinhas: direção artística, motion design, animação 2D/3D e experiências audiovisuais de grande escala.">
+<link rel="canonical" href="https://carinhasinmotion.github.io/">
+<link rel="icon" type="image/png" href="Index/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bruno Carinhas — Portfolio">
+<meta property="og:title" content="Bruno Carinhas — Art Direction & Motion Design">
+<meta property="og:description" content="Portefólio de Bruno Carinhas: direção artística, motion design, animação 2D/3D e experiências audiovisuais de grande escala.">
+<meta property="og:url" content="https://carinhasinmotion.github.io/">
+<meta property="og:image" content="https://carinhasinmotion.github.io/Index/photo.png">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -1277,6 +1288,14 @@ html{overflow-x:clip}body{max-width:100%;overflow-x:clip}img,video,iframe{max-wi
   .stats-inner .stat-number{font-size:clamp(27px,8vw,36px)}
   .stats-inner .stat-label{font-size:8px;letter-spacing:0}
 }
+
+/* Contact, mobile refinements, focus visibility and reduced-motion support */
+.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:850px;margin-left:auto;margin-right:auto}
+.contact-card{min-width:0}.contact-card a{overflow-wrap:anywhere;max-width:100%}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media(max-width:768px){#about,#portfolio,#contact{padding-left:24px;padding-right:24px}.contact-grid{grid-template-columns:1fr;gap:12px}.contact-card{margin:0}.about-grid,.skills-grid,.stats-inner{max-width:100%}.hero-content{max-width:100%;padding:0 14px}}
+@media(max-width:480px){#about,#portfolio,#contact{padding-left:18px;padding-right:18px}.stats-inner .stat-label{overflow-wrap:anywhere}.contact-card{padding:24px 16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
@@ -1421,10 +1440,7 @@ Trabalho principalmente em conteúdos audiovisuais, video mapping e experiência
       </div>
 
       <div class="about-cta-row">
-        <a href="#" class="btn-cv">
-          <svg viewBox="0 0 14 14" fill="currentColor"><path d="M7 0L7 10M3 7L7 11L11 7M0 13L14 13" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-          Descarregar CV
-        </a>
+        
         <a href="Index/hero.mp4" target="_blank" rel="noopener" class="btn-showreel">Ver Showreel</a>
       </div>
     </div>
@@ -1629,54 +1645,15 @@ Trabalho principalmente em conteúdos audiovisuais, video mapping e experiência
         <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,14 22,4"/></svg>
       </div>
       <h4>Email</h4>
-      <a href="mailto:bruno.carinhas@gmail.com">brucarinhas@gmail.com</a>
+      <a href="mailto:brucarinhas@gmail.com">brucarinhas@gmail.com</a>
     </div>
-    <div class="contact-card">
-      <div class="contact-icon">
-        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.63 19.79 19.79 0 01.11 1.07 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.46-.46a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      </div>
-      <h4>Telefone</h4>
-      <a href="tel:+351912345678">+351 912 345 678</a>
-    </div>
-    <div class="contact-card">
-      <div class="contact-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      </div>
-      <h4>Localização</h4>
-      <span>Lisboa, Portugal</span>
-    </div>
-  </div>
 
-  <div class="reveal reveal-delay-2">
-    <p class="social-label">Segue o Meu Trabalho</p>
-    <div class="social-links">
-      <!-- LinkedIn -->
-      <a href="#" class="social-link" title="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-      </a>
-      <!-- Instagram -->
-      <a href="#" class="social-link" title="Instagram">
-        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-linecap="round"/></svg>
-      </a>
-      <!-- Behance -->
-      <a href="#" class="social-link" title="Behance">
-        <svg viewBox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H-2.387v-7.01h3.4c1.426 0 2.426.773 2.426 2.063 0 .775-.323 1.419-1.053 1.821.852.31 1.345 1.064 1.345 1.992 0 1.33-.948 2.134-2.356 2.134zM-.34 14.21h1.347c.677 0 1.046-.346 1.046-.939 0-.607-.37-.939-1.046-.939H-.34v1.878zm0 3.554h1.389c.718 0 1.12-.392 1.12-.99 0-.598-.412-.99-1.12-.99H-.34v1.98z"/></svg>
-      </a>
-      <!-- Vimeo -->
-      <a href="#" class="social-link" title="Vimeo">
-        <svg viewBox="0 0 24 24"><path d="M23 7.286c-.1 2.209-1.638 5.234-4.616 9.073C15.327 20.4 12.746 22.35 10.62 22.35c-1.328 0-2.45-1.226-3.367-3.68L5.66 12.918C5.025 10.464 4.35 9.237 3.63 9.237c-.157 0-.706.33-1.647.987L1 9.048c1.037-.91 2.06-1.82 3.066-2.73 1.382-1.194 2.42-1.82 3.114-1.876 1.634-.157 2.641.96 3.02 3.35.41 2.576.693 4.178.852 4.806.472 2.155.991 3.23 1.557 3.23.44 0 1.099-.697 1.979-2.09.879-1.393 1.35-2.454 1.412-3.182.125-1.204-.347-1.806-1.412-1.806-.504 0-1.024.115-1.557.346 1.034-3.388 3.009-5.035 5.924-4.943 2.161.063 3.18 1.467 3.045 4.133z"/></svg>
-      </a>
-      <!-- YouTube -->
-      <a href="#" class="social-link" title="YouTube">
-        <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--black)"/></svg>
-      </a>
-    </div>
-  </div>
+
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 <a href="#">Bruno Carinhas</a>. Todos os direitos reservados.</p>
+  <p>© 2026 <a href="index.html">Bruno Carinhas</a>. Todos os direitos reservados.</p>
 </footer>
 
 <script>
